@@ -11,3 +11,13 @@ Set ZSH as your default shell:
 
 # Standard theme
 To render the theme correctly set a Powerline patched font as your terminals font or as your IDE font. Enjoy!
+
+# Extra p10k options
+The theme is set to powerlevel9k by default. To enable p10k look for this line;
+
+`ZSH_THEME="powerlevel10k/powerlevel9k"`
+
+Comment this line and uncomment the following line below it:
+`#ZSH_THEME="powerlevel10k/powerlevel10k"`
+
+After that run `p10k configure` to set your p10k appearance
