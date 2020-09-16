@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $(dirname $0) && WORKING_DIR=$(pwd)
+
 # Install Powerline Fonts
 git clone https://github.com/powerline/fonts.git ~/.programs/fonts
 cd ~/.programs/fonts
@@ -25,6 +27,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 rm -rf ~/.programs/menlo ~/.programs/fonts
 
 # Copy the .zshrc config
+cd $WORKING_DIR
 cp .zshrc ~/.zshrc
 cp .p10k.zsh ~/.p10k.zsh
 echo "Install done! Set a powerline font as your terminal font and open zsh. Enjoy!"
