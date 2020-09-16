@@ -23,8 +23,8 @@ The theme is set to powerlevel10k by default. To enable p9k look for this line;
 Uncomment this line and comment the following line below it:
 `ZSH_THEME="powerlevel10k/powerlevel10k"`
 
-Run `p10k configure` to set your p10k appearance if you want to further customize your terminal appearance
+Run `p10k configure` to reset your p10k appearance if you want to change your terminal appearance
 
 ## Screenshot of the current configuration
 
-![Example](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbhilburn.org%2Fcontent%2Fimages%2F2014%2F12%2Fpowerlevel9k.png&f=1&nofb=1)
+![Example](https://i.imgur.com/qnJhHKI.png)
