@@ -1,4 +1,4 @@
-# My ZSH Setup with Powerlevel10k (Set default to Powerlevel9k)
+# My ZSH Setup with Powerlevel10k
 
 To run this script to copy the config make sure you have zsh installed!
 
