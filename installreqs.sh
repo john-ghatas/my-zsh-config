@@ -26,5 +26,5 @@ rm -rf ~/.programs/menlo ~/.programs/fonts
 
 # Copy the .zshrc config
 cp .zshrc ~/.zshrc
-
+cp .p10k.zsh ~/.p10k.zsh
 echo "Install done! Set a powerline font as your terminal font and open zsh. Enjoy!"
