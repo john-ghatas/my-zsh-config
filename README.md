@@ -2,7 +2,11 @@
 
 To run this script to copy the config make sure you have zsh installed!
 
-Run the script: `./installreqs.sh`
+# Installation
+
+To install the configuration with all the requirements run the following command: 
+
+`./installreqs.sh`
 
 #### If you have ZSH already installed please backup your .zshrc before you run the script
 
