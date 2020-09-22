@@ -40,4 +40,4 @@ Run `p10k configure` to reset your p10k appearance if you want to change your te
 
 ## Screenshot of the current configuration
 
-![Example](https://i.imgur.com/KIo1dzg.png)
+![Example](https://i.imgur.com/b6lnJyM.png)
