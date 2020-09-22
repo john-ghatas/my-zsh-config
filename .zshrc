@@ -114,6 +114,10 @@ alias u="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sud
 
 # GIT aliases
 alias git-pull="git pull --rebase"
+alias scommit='git commit -S'
+alias commit='git commit'
+alias sign-commits="git rebase -i --root --exec 'git commit --amend --no-edit --no-verify -S'"
+alias sign-commit="git rebase --root --exec 'git commit --amend --no-edit --no-verify -S' -i"
 
 # Other
 alias format-eslint='eslint . --ext .js "--fix"'
