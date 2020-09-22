@@ -12,10 +12,6 @@ git clone https://github.com/abertsch/Menlo-for-Powerline.git ~/.programs/menlo
 cd ~/.programs/menlo
 sudo mv 'Menlo for Powerline.ttf'  /usr/share/fonts
 
-# Install NerdFonts
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-sudo mv 'MesloLGS NF Regular.ttf' /usr/share/fonts
-
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 

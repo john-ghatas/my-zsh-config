@@ -8,6 +8,11 @@ To install the configuration with all the requirements run the following command
 
 `./installreqs.sh`
 
+## Recommended fonts
+The font used for this config is a Nerd Font, the recommended Nerd Font to use is 
+[A patched MesloLGS](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+font, freel free to use any other patched Nerd Font.
+
 #### If you have ZSH already installed please backup your .zshrc before you run the script
 
 Set ZSH as your default shell:
