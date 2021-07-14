@@ -110,23 +110,26 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Upgrade
-alias u="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y"
-
+alias u="sudo dnf upgrade --refresh && sudo flatpak update -y"
+alias setvim="sudo ln -snf /usr/bin/nvim /usr/bin/vim"
+alias activate-python2="source ~/opt/python2.7/bin/activate"
 # GIT aliases
 alias git-pull="git pull --rebase"
 alias scommit='git commit -S'
 alias commit='git commit'
 alias sign-commits="git rebase -i --root --exec 'git commit --amend --no-edit --no-verify -S'"
 alias sign-commit="git rebase --root --exec 'git commit --amend --no-edit --no-verify -S' -i"
+alias read-yubi-ssh="ssh-keygen -D /usr/lib64/opensc-pkcs11.so"
 
 # Other
 alias format-eslint='eslint . --ext .js "--fix"'
 
-# Project (ALICE)
-alias alice-test="docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit"
-alias alice-dev='docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build'
-
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# Project
+alias compose-test="docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit"
+alias compose-dev='docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
