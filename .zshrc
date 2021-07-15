@@ -119,7 +119,7 @@ alias scommit='git commit -S'
 alias commit='git commit'
 alias sign-commits="git rebase -i --root --exec 'git commit --amend --no-edit --no-verify -S'"
 alias sign-commit="git rebase --root --exec 'git commit --amend --no-edit --no-verify -S' -i"
-alias read-yubi-ssh="ssh-keygen -D /usr/lib64/opensc-pkcs11.so"
+alias restart-reader="sudo systemctl restart pcscd"
 
 # Other
 alias format-eslint='eslint . --ext .js "--fix"'
