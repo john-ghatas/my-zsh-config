@@ -114,9 +114,10 @@ alias u="sudo dnf upgrade --refresh && sudo flatpak update -y"
 alias setvim="sudo ln -snf /usr/bin/nvim /usr/bin/vim"
 alias activate-python2="source ~/opt/python2.7/bin/activate"
 # GIT aliases
-alias git-pull="git pull --rebase"
+alias pull="git pull --rebase"
+alias push="git push"
 alias scommit='git commit -S'
-alias commit='git commit'
+alias gc='git commit'
 alias sign-commits="git rebase -i --root --exec 'git commit --amend --no-edit --no-verify -S'"
 alias sign-commit="git rebase --root --exec 'git commit --amend --no-edit --no-verify -S' -i"
 alias restart-reader="sudo systemctl restart pcscd"
