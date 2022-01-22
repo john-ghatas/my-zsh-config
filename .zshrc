@@ -110,7 +110,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Upgrade
-alias u="sudo dnf upgrade --refresh && sudo flatpak update -y"
+alias u="sudo dnf upgrade --refresh && flatpak update -y"
 alias setvim="sudo ln -snf /usr/bin/nvim /usr/bin/vim"
 alias activate-python2="source ~/opt/python2.7/bin/activate"
 # GIT aliases
