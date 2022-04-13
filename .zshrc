@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -110,7 +110,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Upgrade
-alias u="sudo dnf upgrade && sudo dnf autoremove && sudo dnf clean all && flatpak update -y"
+alias u="sudo dnf upgrade && flatpak update -y"
+alias uc="sudo dnf autoremove && sudo dnf clean all"
 alias setvim="sudo ln -snf /usr/bin/nvim /usr/bin/vim"
 alias activate-python2="source ~/opt/python2.7/bin/activate"
 # GIT aliases
