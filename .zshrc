@@ -126,6 +126,7 @@ alias vim="nvim"
 
 # Other
 alias format-eslint='eslint . --ext .js "--fix"'
+alias update-adb='wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip -O ~/bin/platform-tools.zip; unzip platform-tools.zip -d ~/bin/; cp -r ~/bin/platform-tools/* ~/bin/;rm -rf ~/bin/platform-tools.zip ~/bin/platform-tools'
 
 # Project
 alias compose-test="docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit"
