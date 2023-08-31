@@ -2,16 +2,6 @@
 
 cd $(dirname $0) && WORKING_DIR=$(pwd)
 
-# Install Powerline Fonts
-git clone https://github.com/powerline/fonts.git ~/.programs/fonts
-cd ~/.programs/fonts
-./install.sh
-
-# Install Menlo for Powerline to use with VSCode or another IDE Integrated terminal 
-git clone https://github.com/abertsch/Menlo-for-Powerline.git ~/.programs/menlo
-cd ~/.programs/menlo
-sudo mv 'Menlo for Powerline.ttf'  /usr/share/fonts
-
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
