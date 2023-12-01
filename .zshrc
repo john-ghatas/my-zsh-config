@@ -136,7 +136,8 @@ alias compose-dev='docker-compose -f docker-compose.yml -f docker-compose.dev.ym
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-#export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
 gpgconf --launch gpg-agent
 
-
+# Container stuff to expose podman to Docker first binaries
+#export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+#export KIND_EXPERIMENTAL_PROVIDER=podman
