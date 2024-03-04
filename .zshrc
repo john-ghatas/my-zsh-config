@@ -138,6 +138,9 @@ alias compose-dev='docker-compose -f docker-compose.yml -f docker-compose.dev.ym
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
-# Container stuff to expose podman to Docker first binaries
-#export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
-#export KIND_EXPERIMENTAL_PROVIDER=podman
+# Podman stuff
+#export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock # Use podman as the docker-compose backend
+#export KIND_EXPERIMENTAL_PROVIDER=podman # Use podman as the KIND driver
+
+# Enable devbox as a global pacman
+eval "$(devbox global shellenv)"
