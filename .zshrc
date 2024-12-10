@@ -143,4 +143,4 @@ gpgconf --launch gpg-agent
 #export KIND_EXPERIMENTAL_PROVIDER=podman # Use podman as the KIND driver
 
 # Enable devbox as a global pacman
-eval "$(devbox global shellenv)"
+#eval "$(devbox global shellenv)"
