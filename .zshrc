@@ -1,23 +1,35 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-posh installation.
+# Path to your oh-my-posh installation and general ZSH config
 export ZSH="$HOME/.local/oh-my-posh"
 export ZSH_CUSTOM="$HOME/.local/oh-my-posh/custom"
 
+# History tweaks
+SAVEHIST=1000
+HISTSIZE=1000
+HISTFILE=~/.zsh_history
+
 # Shell theming - init oh-my-posh
-eval "$(oh-my-posh init zsh --config ~/.local/oh-my-posh/sonicboom_dark.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.local/oh-my-posh/bubbles.omp.json)"
 
 # Add keybindings and source the plugins
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 # Tweaks
+# Zstyle
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 zstyle ':completion:*' use-cache true # Cache completion to `${ZDOTDIR}/.zcompcache`.
 zstyle ':completion:*' menu 'select' # Make the menu interactive with arrow keys.
+
+# Additional opts
 setopt autocd
+setopt appendhistory
+setopt sharehistory
+
+# Initialize
 autoload -Uz compinit
 compinit
 

@@ -8,6 +8,16 @@ To install the configuration with all the requirements run the following command
 
 `./installreqs.sh`
 
+:warning: There are packages required to run the script :warning:
+
+| Packages | 
+| -------- |
+| curl     |
+| wget     |
+| unzip    | 
+
+
+
 ## Recommended fonts
 The font used for this config is a Nerd Font, the recommended Nerd Font to use is: 
 
