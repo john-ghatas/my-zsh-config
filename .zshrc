@@ -50,6 +50,7 @@ alias u="sudo dnf upgrade && flatpak update -y"
 alias uc="sudo dnf autoremove && sudo dnf clean all"
 alias setvim="sudo ln -snf /usr/bin/nvim /usr/bin/vim"
 alias activate-python2="source ~/opt/python2.7/bin/activate"
+
 # GIT aliases
 alias pull="git pull --rebase"
 alias push="git push"
@@ -65,9 +66,10 @@ alias format-eslint='eslint . --ext .js "--fix"'
 alias update-adb='wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip -O ~/bin/platform-tools.zip; unzip platform-tools.zip -d ~/bin/; cp -r ~/bin/platform-tools/* ~/bin/;rm -rf ~/bin/platform-tools.zip ~/bin/platform-tools'
 
 
-# Project
-alias compose-test="docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit"
-alias compose-dev='docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build'
+# Development
+alias install-devpod='curl -L -o ~/.local/bin/devpod "https://github.com/loft-sh/devpod/releases/latest/download/devpod-linux-amd64" && chmod 755 ~/.local/bin/devpod'
+alias compose-test="docker compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit"
+alias compose-dev='docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build'
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
