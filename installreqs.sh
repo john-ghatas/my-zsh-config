@@ -8,7 +8,7 @@ mkdir -p ~/.local/{bin,oh-my-posh/custom/plugins}
 wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/sonicboom_dark.omp.json -O ~/.local/oh-my-posh/sonicboom_dark.omp.json
 wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/bubblesextra.omp.json -O ~/.local/oh-my-posh/bubbles.omp.json
 
-curl -s https://ohmyposh.dev/install.sh | bash -s
+curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
 
 # Install ZSH plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.local/oh-my-posh/custom/plugins/zsh-autosuggestions
