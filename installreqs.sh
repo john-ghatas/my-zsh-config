@@ -3,6 +3,7 @@
 cd $(dirname $0) && WORKING_DIR=$(pwd)
 
 # Install oh-my-zsh
+rm -rf ~/.oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install ZSH plugins and Power10k
