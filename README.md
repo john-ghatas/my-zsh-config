@@ -1,4 +1,4 @@
-# My ZSH Setup with Powerlevel10k
+# My ZSH Setup with oh-my-posh
 
 To run this script to copy the config make sure you have zsh installed!
 
@@ -27,17 +27,25 @@ Set ZSH as your default shell:
 
 To render the theme correctly set a Powerline patched font as your terminals font or as your IDE font. Enjoy!
 
-# Extra p10k options
+# Optional themes
+If you want to swap the theme used in your shell - have a look at the [list](https://ohmyposh.dev/docs/themes) of available themes that come with the oh-my-posh installation. Pick your next theme and adjust the .zshrc accordingly!
 
-The theme is set to powerlevel10k by default. To enable p9k look for this line;
+For example for the **Alien** theme you need to make the following change
+```
+vim ~/.zshrc
 
-`#ZSH_THEME="powerlevel10k/powerlevel9k"`
+[...] # Look for this block
+#### ─────────────────────────────────────────────
+#### OH-MY-POSH
+#### ─────────────────────────────────────────────
 
-Uncomment this line and comment the following line below it:
-`ZSH_THEME="powerlevel10k/powerlevel10k"`
+eval "$(oh-my-posh init zsh --config "$HOME/.cache/oh-my-posh/themes/blue-owl.omp.json")"
 
-Run `p10k configure` to reset your p10k appearance if you want to change your terminal appearance
+[...]
+#### ─────────────────────────────────────────────
+#### OH-MY-POSH
+#### ─────────────────────────────────────────────
 
-## Screenshot of the current configuration
+eval "$(oh-my-posh init zsh --config "$HOME/.cache/oh-my-posh/themes/atomic.omp.json")"
 
-![Example](https://i.imgur.com/b6lnJyM.png)
+```

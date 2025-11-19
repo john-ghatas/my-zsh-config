@@ -1,24 +1,71 @@
 #!/bin/bash
+set -euo pipefail
 
-cd $(dirname $0) && WORKING_DIR=$(pwd)
+# Determine working directory
+WORKING_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# Install oh-my-zsh
-rm -rf ~/.oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+# Directories
+OMP_BIN="$HOME/.local/bin"
+OMP_CONFIG="$HOME/.config/oh-my-posh"
+OMP_PLUGINS="$OMP_CONFIG/plugins"
 
-# Install ZSH plugins and Power10k
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+#### ─────────────────────────────────────────────
+#### Oh My Posh installation
+#### ─────────────────────────────────────────────
 
-# Backup .zshrc
-[ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bak
+echo "[+] Installing Oh My Posh..."
 
-# Cleanup
-rm -rf ~/.programs/menlo ~/.programs/fonts
+rm -rf "$OMP_BIN/oh-my-posh" "$OMP_PLUGINS"
+mkdir -p "$OMP_BIN" "$OMP_PLUGINS"
 
-# Copy the .zshrc config
-cd $WORKING_DIR
-cp .zshrc ~/.zshrc
-cp .p10k.zsh ~/.p10k.zsh
-echo "Install done! Set a powerline font or a nerd font (NF) as your terminal font and open zsh. Enjoy!"
+curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "$OMP_BIN"
+
+
+#### ─────────────────────────────────────────────
+#### ZSH plugins installation
+#### ─────────────────────────────────────────────
+
+echo "[+] Installing Zsh plugins..."
+
+# Autosuggestions
+if [ ! -d "$OMP_PLUGINS/zsh-autosuggestions" ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git \
+        "$OMP_PLUGINS/zsh-autosuggestions"
+fi
+
+# Syntax highlighting
+if [ ! -d "$OMP_PLUGINS/zsh-syntax-highlighting" ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+        "$OMP_PLUGINS/zsh-syntax-highlighting"
+fi
+
+
+#### ─────────────────────────────────────────────
+#### Oh My Zsh Git plugin (manual pull)
+#### ─────────────────────────────────────────────
+
+echo "[+] Fetching oh-my-zsh git plugin..."
+
+mkdir -p "$OMP_PLUGINS/git"
+curl -fsSL \
+    -o "$OMP_PLUGINS/git/git.plugin.zsh" \
+    https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/git/git.plugin.zsh
+
+
+#### ─────────────────────────────────────────────
+#### .zshrc Backup & Install
+#### ─────────────────────────────────────────────
+
+echo "[+] Updating .zshrc..."
+
+if [ -f "$HOME/.zshrc" ]; then
+    cp "$HOME/.zshrc" "$HOME/.zshrc.bak"
+    echo "[-] Backup created: ~/.zshrc.bak"
+fi
+
+cp "$WORKING_DIR/.zshrc" "$HOME/.zshrc"
+
+
+echo "[✔] Install done!"
+echo "→ Set a Nerd Font (NF) or Powerline font in your terminal."
+echo "→ Open a new Zsh session to enjoy your environment."
