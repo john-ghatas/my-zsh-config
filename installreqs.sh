@@ -41,16 +41,19 @@ fi
 
 
 #### ─────────────────────────────────────────────
-#### Oh My Zsh Git plugin (manual pull)
+#### Oh My Zsh Git plugin and common aliases (manual pull)
 #### ─────────────────────────────────────────────
 
-echo "[+] Fetching oh-my-zsh git plugin..."
+echo "[+] Fetching oh-my-zsh git and aliases plugin..."
 
-mkdir -p "$OMP_PLUGINS/git"
+mkdir -p $OMP_PLUGINS/{git,aliases}
 curl -fsSL \
     -o "$OMP_PLUGINS/git/git.plugin.zsh" \
     https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/git/git.plugin.zsh
 
+curl -fsSL \
+   -o "$OMP_PLUGINS/aliases/aliases.plugin.zsh" \
+   https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/common-aliases/common-aliases.plugin.zsh
 
 #### ─────────────────────────────────────────────
 #### .zshrc Backup & Install

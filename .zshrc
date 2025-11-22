@@ -58,8 +58,11 @@ compinit
 #### PLUGINS
 #### ─────────────────────────────────────────────
 
-# Git plugin from Oh My Posh
+# Git
 source "$ZSH_C/git/git.plugin.zsh"
+
+# Common Aliases
+source "$ZSH_C/aliases/aliases.plugin.zsh"
 
 # Autosuggestions
 source "$ZSH_C/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
@@ -103,4 +106,4 @@ gpgconf --launch gpg-agent
 #### OH-MY-POSH
 #### ─────────────────────────────────────────────
 
-eval "$(oh-my-posh init zsh --config "$HOME/.cache/oh-my-posh/themes/slimfat.omp.json")"
+eval "$(oh-my-posh init zsh --config "$HOME/.cache/oh-my-posh/themes/night-owl.omp.json")"
