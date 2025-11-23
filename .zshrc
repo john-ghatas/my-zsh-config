@@ -22,12 +22,17 @@ HISTSIZE=1500
 SAVEHIST=1500
 HISTFILE=~/.zsh_history
 
+# Setup history settings
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
+# Enable case sensitivity
 setopt NO_CASE_GLOB
+# Enable changing directory
+setopt AUTO_CD
+setopt AUTO_PARAM_SLASH
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
