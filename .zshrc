@@ -95,9 +95,11 @@ alias sign-commit="git rebase --root --exec 'git commit --amend --no-edit --no-v
 alias restart-reader="sudo systemctl restart pcscd"
 
 # Projects
-alias compose-test="docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit"
-alias compose-dev="docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build"
-
+alias compose-test="docker compose -f compose.yml -f compose.test.yml up --build --abort-on-container-exit"
+alias compose-dev-up="docker compose -f compose.yml -f compose.dev.yml up --build"
+alias compose-prd-up="docker compose up --build"
+alias compose-dev-down="docker compose -f compose.yml -f compose.dev.yml down"
+alias compose-prd-down="docker compose down"
 
 #### ─────────────────────────────────────────────
 #### GPG + SSH Agent
