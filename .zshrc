@@ -75,6 +75,18 @@ source "$ZSH_C/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 # Syntax highlighting (MUST be last)
 source "$ZSH_C/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
+#### ─────────────────────────────────────────────
+#### FUNCTIONS
+#### ─────────────────────────────────────────────
+proxy_on() { 
+  local port=${1:-1080} # Uses provided port, defaults to 1080 if none given
+  export http_proxy="socks5h://127.0.0.1:$port"
+  export https_proxy="socks5h://127.0.0.1:$port"
+  export all_proxy="socks5h://127.0.0.1:$port"
+  echo "Proxy enabled on port $port"
+}
+
+proxy_off() { unset http_proxy https_proxy all_proxy; echo "Proxy disabled"; }
 
 #### ─────────────────────────────────────────────
 #### ALIASES
